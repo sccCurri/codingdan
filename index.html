@@ -1,287 +1,442 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스파르타코딩클럽 입단 서약서</title>
+    <link
+        href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
+        rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/newspaper.css">
+    <title>코딩단 포스트</title>
+    <meta name="viewport" content="width=device-width">
     <style>
-        @font-face {
-            font-family: 'Ramche';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Ramche.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
+        body {
+            font-family: 'Droid Serif', serif;
+            font-size: 14px;
+            color: #2f2f2f;
+            background-color: #f9f7f1;
         }
 
-        * {
-            font-family: 'Ramche';
-            color: #fdd978;
-        }
-
-        .d-flex {
-            display: flex;
-        }
-
-        .flex-col {
-            flex-direction: column;
-        }
-
-        .df-center {
-            align-items: center;
-            justify-content: center;
-        }
-
-        .df-between {
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .df-row {
-            align-items: center;
-        }
-
-        .wrap {
-            width: 80%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: auto;
-        }
-
-        #news {
-            width: 100%;
-            height: 100vh;
-            background-color: #605542;
-
-            padding: 1rem;
-            box-sizing: border-box;
-        }
-
-        #news-header {
-            width: 100%;
-            height: 12%;
-
-            /* background-color: rgba(255, 0, 0, 0.4); */
-        }
-
-        #title {
-            text-align: center;
+        header {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 80px;
             text-transform: uppercase;
-        }
-
-        #subtitle {
-            text-align: center;
-        }
-
-        #news-main {
-            width: 100%;
-            height: 80%;
-            /* background-color: rgba(0, 255, 0, 0.4); */
-
-            padding: 1rem;
-            box-sizing: border-box;
-
-        }
-
-        video {
-            width: 40%;
-            height: 40%;
-
-            background-color: black;
-        }
-
-        /* 기존 코드에 추가 및 수정 */
-
-        /* 상단 그리드 설정 */
-        .top-grid {
-            display: grid;
-            grid-template-columns: 1fr 50% 1fr;
-            gap: 20px;
-            height: 60%;
-            /* 전체 메인의 60% 차지 */
+            display: inline-block;
+            line-height: 72px;
             margin-bottom: 20px;
-            /* 하단 그리드와의 간격 */
+
         }
 
-        /* 하단 그리드 설정 */
-        .bottom-grid {
-            display: grid;
-            grid-template-columns: 2fr 3fr;
-            /* 다른 크기로 설정 */
-            gap: 20px;
-            height: 40%;
-            /* 전체 메인의 40% 차지 */
+        p {
+            margin-top: 0;
+            margin-bottom: 20px;
         }
 
-        .grid-item {
-            background-color: rgba(255, 255, 255, 0.5);
-            /* 그리드 아이템의 배경색 */
+        .head {
+            text-align: center;
+            position: relative;
+
+
+        }
+
+        .headerobjectswrapper {}
+
+        .subhead {
+            text-transform: uppercase;
+            border-bottom: 2px solid #2f2f2f;
+            border-top: 2px solid #2f2f2f;
+            padding: 12px 0 12px 0;
+
+        }
+
+        .weatherforcastbox {
+            position: relative;
+            width: 12%;
+            left: 10px;
+            border: 3px double #2f2f2f;
+            padding: 10px 15px 10px 15px;
+            line-height: 20px;
+            display: inline-block;
+            margin: 0 50px 20px -360px;
+        }
+
+        .content {
+            font-size: 0;
+            line-height: 0;
+            word-spacing: -.31em;
+            display: inline-block;
+            margin: 30px 2% 0 2%;
+
+
+        }
+
+        .collumns {}
+
+        .collumn {
+            font-size: 14px;
+            line-height: 20px;
+            width: 17.5%;
+            display: inline-block;
+            padding: 0 1% 0 1%;
+            vertical-align: top;
+            margin-bottom: 50px;
+            transition: all .7s;
+        }
+
+        .collumn+.collumn {
+            border-left: 1px solid #2f2f2f;
+        }
+
+        .collumn .headline {
+            text-align: center;
+            line-height: normal;
+            font-family: 'Playfair Display', serif;
+            display: block;
+            margin: 0 auto;
+
+
+        }
+
+        .collumn .headline.hl1 {
+            font-weight: 700;
+            font-size: 30px;
+            text-transform: uppercase;
+            padding: 10px 0 10px 0;
+
+        }
+
+        .collumn .headline.hl2 {
+            font-weight: 400;
+            font-style: italic;
+            font-size: 24px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl2:before {
+            border-top: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 7px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .collumn .headline.hl2:after {
+            border-bottom: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 13px;
+            display: block;
+            margin: 0 auto;
+
+        }
+
+        .collumn .headline.hl3 {
+            font-weight: 400;
+            font-style: italic;
+            font-size: 36px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl4 {
+            font-weight: 700;
+            font-size: 12px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl4:before {
+            border-top: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 7px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .collumn .headline.hl4:after {
+            border-bottom: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 10px;
+            display: block;
+            margin: 0 auto;
+
+        }
+
+        .collumn .headline.hl5 {
+            font-weight: 400;
+            font-size: 42px;
+            text-transform: uppercase;
+            font-style: italic;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl6 {
+            font-weight: 400;
+            font-size: 18px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl6:before {
+            border-top: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 7px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .collumn .headline.hl6:after {
+            border-bottom: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 10px;
+            display: block;
+            margin: 0 auto;
+
+        }
+
+        .collumn .headline.hl7 {
+            font-weight: 700;
+            font-size: 12px;
+            box-sizing: border-box;
+            display: block;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl8 {
+            font-weight: 700;
+            font-size: 12px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl9 {
+            font-weight: 700;
+            font-size: 12px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl10 {
+            font-weight: 700;
+            font-size: 12px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .citation {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            line-height: 44px;
+            /*font-style: italic;*/
+            text-align: center;
+            font-weight: 400;
+            display: block;
+            margin: 40px 0 40px 0;
+            font-feature-settings: "liga", "dlig";
+
+        }
+
+        .collumn .citation:before {
+            border-top: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .collumn .citation:after {
+            border-bottom: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .collumn .figure {
+            margin: 0 0 20px;
+        }
+
+        .collumn .figcaption {
+            font-style: italic;
+            font-size: 12px;
+        }
+
+        .media {
+            -webkit-filter: sepia(80%) contrast(1) opacity(0.8);
+            filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
+            mix-blend-mode: multiply;
+            width: 100%;
+        }
+
+        /*________________________________________________________________________________________________________________________________*/
+        /*MEDIAQUERIES*/
+        @media only all and (max-width: 1300px) {
+            .weatherforcastbox {
+                display: none;
+            }
+
+        }
+
+        @media only all and (max-width: 1200px) {
+            .collumn {
+                width: 31%;
+            }
+
+        }
+
+        @media only all and (max-width: 900px) {
+            .collumn {
+                width: 47%;
+            }
+
+        }
+
+        @media only all and (max-width: 600px) {
+            .collumn {
+                width: 100%;
+            }
+
+            .collumn+.collumn {
+                border-left: none;
+                border-bottom: 1px solid #2f2f2f;
+            }
+
+            header {
+                max-width: 320px;
+                font-size: 60px;
+                line-height: 54px;
+                overflow: hidden;
+            }
+
+        }
+        figure {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-
-            padding: 1rem;
-            box-sizing: border-box;
         }
-        .video-container {
-            overflow: hidden;
-        }
-        .video-container video {
-            width: 100%;
-            height: 100%;
-            /* 영상의 폭을 그리드 아이템에 맞게 설정 */
-            background-color: black;
-            object-fit: cover;
+        figure video {
+            height: 20rem;
             filter: grayscale(100%);
+            object-fit: cover;
         }
-
-        .text {
-            letter-spacing: 0.5rem;
-            text-align: center;
-            line-height: 1.1rem;
-        }
-
-        @keyframes flicker {
-
-            0%,
-            20%,
-            40%,
-            60%,
-            80%,
-            100% {
-                content: attr(data-char);
-            }
-
-            10%,
-            30%,
-            50%,
-            70%,
-            90% {
-                content: '0';
-            }
-        }
-
-        /* .morph::before {
-            content: attr(data-char);
-            display: inline-block;
-            animation: flicker 1s infinite;
-        } */
-        .morph::before {
-            content: attr(data-char);
-            display: inline-block;
-            animation: flicker 3s infinite;
-            animation-delay: var(--delay, 0s);
+        .collumn {
+            overflow: hidden;
         }
     </style>
 </head>
 
 <body>
-    <div class="wrap">
-        <div id="news">
-            <div id="news-header">
-                <h1 id="title">daily prophet</h1>
-                <hr>
-                <h2 id="subtitle"><span class="name">황영상</span> , 그는 누구인가?</h2>
-            </div>
-            <div id="news-main">
-                <div class="top-grid">
-                    <div class="grid-item d-flex flex-col df-center">
-                        <span class="text">스팀펑크 시대의 황영상은 단순한 개인이 아닙니다. 그는 마법과 기술이 결합한 미지의 세계에서 그 무엇도 불가능하지 않다는 증거입니다. 이제
-                            그의 모든 것이 알려져야 할 때입니다.
+    <div class="head">
+        <div class="headerobjectswrapper">
+            <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours:
+                    Plenty of Sunshine</span><br><span>Wind: 7km/h SSE; Ther: 21°C; Hum: 82%</span></div>
+            <header>KODINGDAN POST</header>
+        </div>
 
-                            《예언자 신문》에서는 황영상의 도전, 열정, 그리고 마법 코딩의 세계로의 입문을 다루는 흥미진진한 이야기를 펼칩니다. 황영상이 전설적인 암약 단체인 '코딩단'에
-                            합류하는 과정은 스팀펑크 시대의 새로운 시작입니다.</span>
-                    </div>
-                    <div class="grid-item video-container">
-                        <video controls muted loop>
-                            <source src="man.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="grid-item d-flex flex-col df-center">
-                        <span class="text">
-                            황영상은 평범한 삶을 포기하고 마법과 과학의 경계에서 탐험을 시작합니다. 그가 마주칠 것인 미지의 위험과 현실, 그리고 정체불명의 마법 코딩 능력을 발휘하여 세상을
-                            바꿀 수 있는 가능성에 대한 질문은 계속해서 늘어갑니다. 황영상의 모험은 독자를 스팀펑크 시대의 진실로 인도하며, 미래의 혁신적인 힘을 예고합니다
-                        </span>
-                    </div>
+        <div class="subhead">ICON, Teheran-ro - Thursday August 05, 2033 - Seven Pages</div>
+    </div>
+    <div class="content">
+        <div class="collumns">
+            <div class="collumn">
+                <div class="head"><span class="headline hl3">When darkness overspreads my eyes</span>
+                    <p><span class="headline hl4">by JOHANN WOLFGANG VON GOETHE</span></p>
                 </div>
-                <div class="bottom-grid">
-                    <div class="grid-item d-flex flex-col df-center">
-                        <span class="text">
-                            황영상은 스팀펑크 시대의 어두운 길거리에서 태어났습니다. 그의 어린 시절은 어려움과 결핍 속에서 보냈으며, 그의 부모는 기술과 마법의 혼합에 대한 관심을 가지고
-                            있었습니다. 그러나 황영상은 어린 시절부터 뛰어난 지적 능력을 보이며 다른 아이들과 다르게 생각하고 있었습니다. 그의 눈에는 보이지 않는 세계가 있었고, 그것은
-                            스팀펑크 시대의 진실과 마법의 힘을 꿈꾸게 했습니다.
-                        </span>
-                    </div>
-                    <div class="grid-item d-flex flex-col df-center">
-                        <span class="text">
-                            코딩단은 그의 능력을 발견하고 그를 자신들의 행렬에 초대합니다. 이 단체는 세상을 지배하는 힘을 가지고 있으며, 그들의 미지의 마법 코딩 기술은 다른 모든 것을
-                            뛰어넘는 것으로 알려져 있습니다. 황영상은 그들의 초대를 수락하고, 코딩단의 일원이 되어 암약한 세상의 비밀과 스팀펑크 시대의 진실을 탐험하는 모험을 시작합니다.
-                        </span>
-                    </div>
+                When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper
+                surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner
+                sanctuary, I throw myself down among the tall grass by the trickling stream;<p>and, as I lie close to
+                    the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world
+                    among the stalks, and grow familiar with the countless indescribable forms of the insects and flies,
+                    then I feel the presence of the Almighty, who formed us in his own image, and the breath of that
+                    universal love which bears and sustains us, as it floats around us in an eternity of bliss; and
+                    then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul
+                    and absorb its power, like the form of a beloved mistress, then I often think with longing, Oh,
+                    would I could describe these conceptions, could impress upon paper all that is living so full and
+                    warm within me, that it might be the mirror of my soul, as my soul is the mirror of the infinite
+                    God!</p>
+            </div>
+            <div class="collumn">
+                <div class="head"><span class="headline hl5">Give people courage</span>
+                    <p><span class="headline hl6">The crowd seemed to grow</span></p>
                 </div>
+                The sunset faded to twilight before anything further happened. The crowd far away on the left, towards
+                Woking, seemed to grow, and I heard now a faint murmur from it. The little knot of people towards
+                Chobham dispersed. There was scarcely an intimation of movement from the pit.</p>
+                <figure class="figure">
+                    <img class="media" src="http://i.giphy.com/PW7MoTD2d9pJK.gif" alt="">
+                    <figcaption class="figcaption">Hermine hoping for courage.</figcaption>
+                </figure>
+
+                <p>It was this, as much as anything, that gave people courage, and I suppose the new arrivals from
+                    Woking also helped to restore confidence. At any rate, as the dusk came on a slow, intermittent
+                    movement upon the sand pits began, a movement that seemed to gather force as the stillness of the
+                    evening about the cylinder remained unbroken. Vertical black figures in twos and threes would
+                    advance, stop, watch, and advance again, spreading out as they did so in a thin irregular crescent
+                    that promised to enclose the pit in its attenuated horns. I, too, on my side began to move towards
+                    the pit.</p>
+
+                <p>Then I saw some cabmen and others had walked boldly into the sand pits, and heard the clatter of
+                    hoofs and the gride of wheels. I saw a lad trundling off the barrow of apples. And then, within
+                    thirty yards of the pit, advancing from the direction of Horsell, I noted a little black knot of
+                    men, the foremost of whom was waving a white flag.</p>
+
+            </div>
+            <div class="collumn">
+                <div class="head"><span class="headline hl1">신비로운 인물 황영상, 코딩단의 미지의 힘이 등장
+                    </span>
+                    <p><span class="headline hl2">Let go your conscious self and act on instinct</span></p>
+                </div>뉴 에덴 시티, 2033년 9월 5일 - 스팀펑크 세계에서 코딩은 이제 마법과도 같은 힘으로 여겨지며, 코딩단은 이 기술을 통해 세계를 군림하고 있다. 그러나 이제 그들의 지배에 도전을 일으킬 미지의 인물, 황영상이 나타났다.</p>
+                <figure class="figure">
+                    <video src="../static/man.mp4" controls loop muted autoplay></video>
+                    <figcaption class="figcaption">"This time, let go your conscious self and act on instinct."
+                    </figcaption>
+                </figure>
+                <p>코딩단 내에서는 황영상의 등장으로 인해 긴장과 호기심이 고조되고 있으며, 그의 능력을 살펴보기 위한 연구가 진행 중이다. 코딩단의 대변인은 아래와 같이 밝혔다. <span
+                        class="citation">"황영상은 우리의 디지털 신세계에 새로운 가능성을 제시하고 있습니다."</span>
+                        황영상의 등장으로 스팀펑크 세계는 더욱 복잡하고 혁명적인 시대로의 전환을 예고하고 있으며, 이제 그의 역할과 목적은 미래의 전설로 쓰여질 것으로 기대된다.</p>
+            </div>
+            <div class="collumn">
+                <div class="head"><span class="headline hl3">The buzz of the little world </span>
+                    <p><span class="headline hl4">A thousand unknown plants</span></p>
+                </div>
+                <p>I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never
+                    was a greater artist than now. When, while the lovely valley teems with vapour around me, and the
+                    meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray
+                    gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling
+                    stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear
+                    the buzz of the little world among the stalks, and grow familiar with the countless indescribable
+                    forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own
+                    image, and the breath</p>
+            </div>
+            <div class="collumn">
+                <div class="head"><span class="headline hl1">It wasn't a dream </span>
+                    <p><span class="headline hl4">by FRANZ KAFKA</span></p>
+                </div>
+                <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
+                    into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could
+                    see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was
+                    hardly able to cover it and seemed ready to slide off any moment. </p>
+
+                <p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he
+                    looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room
+                    although a little too small, lay peacefully between its four familiar walls. A collection of textile
+                    samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a
+                    picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.
+                    It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff
+                    that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the
+                    window at the dull weather. </p>
             </div>
         </div>
     </div>
 
-    <script>
-        // document.addEventListener("DOMContentLoaded", function () {
-        //     const texts = document.querySelectorAll('.text');
-
-        //     texts.forEach(text => {
-        //         const str = text.textContent;
-        //         let newStr = '';
-
-        //         for (let i = 0; i < str.length; i++) {
-        //             if (Math.random() < 0.6 && str[i] !== ' ') {
-        //                 newStr += `<span class="morph" data-char="${str[i]}"></span>`;
-        //             } else {
-        //                 newStr += str[i];
-        //             }
-        //         }
-
-        //         text.innerHTML = newStr;
-        //     });
-
-        //     setTimeout(function () {
-        //         const morphs = document.querySelectorAll('.morph');
-        //         morphs.forEach(morph => {
-        //             morph.style.animation = 'none';  // 애니메이션 중지
-        //             morph.textContent = morph.getAttribute('data-char');  // 원래의 문자로 복원
-        //         });
-        //     }, 5000);
-        // });
-        document.addEventListener("DOMContentLoaded", function () {
-            const texts = document.querySelectorAll('.text');
-
-            texts.forEach(text => {
-                const str = text.textContent;
-                let newStr = '';
-
-                for (let i = 0; i < str.length; i++) {
-                    const delay = Math.random() * 2 + 's'; // 0에서 2초 사이의 무작위 지연
-                    if (Math.random() < 0.6 && str[i] !== ' ') {
-                        newStr += `<span class="morph" data-char="${str[i]}" style="--delay: ${delay}"></span>`;
-                    } else {
-                        newStr += str[i];
-                    }
-                }
-
-                text.innerHTML = newStr;
-            });
-
-            setTimeout(function () {
-                const morphs = document.querySelectorAll('.morph');
-                morphs.forEach(morph => {
-                    morph.style.animation = 'none';
-                    morph.textContent = morph.getAttribute('data-char');
-                });
-            }, 5000);
-        });
-
-
-    </script>
 </body>
 
 </html>
