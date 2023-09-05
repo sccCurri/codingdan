@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스파르타코딩클럽 입단 서약서</title>
+    <style>
+        @font-face {
+            font-family: 'Ramche';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Ramche.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            font-family: 'Ramche';
+            color: #fdd978;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .df-center {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .df-between {
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .df-row {
+            align-items: center;
+        }
+
+        .wrap {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        #news {
+            width: 100%;
+            height: 100vh;
+            background-color: #605542;
+
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        #news-header {
+            width: 100%;
+            height: 12%;
+
+            /* background-color: rgba(255, 0, 0, 0.4); */
+        }
+
+        #title {
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        #subtitle {
+            text-align: center;
+        }
+
+        #news-main {
+            width: 100%;
+            height: 80%;
+            /* background-color: rgba(0, 255, 0, 0.4); */
+
+            padding: 1rem;
+            box-sizing: border-box;
+
+        }
+
+        video {
+            width: 40%;
+            height: 40%;
+
+            background-color: black;
+        }
+
+        /* 기존 코드에 추가 및 수정 */
+
+        /* 상단 그리드 설정 */
+        .top-grid {
+            display: grid;
+            grid-template-columns: 1fr 50% 1fr;
+            gap: 20px;
+            height: 60%;
+            /* 전체 메인의 60% 차지 */
+            margin-bottom: 20px;
+            /* 하단 그리드와의 간격 */
+        }
+
+        /* 하단 그리드 설정 */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            /* 다른 크기로 설정 */
+            gap: 20px;
+            height: 40%;
+            /* 전체 메인의 40% 차지 */
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.5);
+            /* 그리드 아이템의 배경색 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .video-container {
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            /* 영상의 폭을 그리드 아이템에 맞게 설정 */
+            background-color: black;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+
+        .text {
+            letter-spacing: 0.5rem;
+            text-align: center;
+            line-height: 1.1rem;
+        }
+
+        @keyframes flicker {
+
+            0%,
+            20%,
+            40%,
+            60%,
+            80%,
+            100% {
+                content: attr(data-char);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                content: '0';
+            }
+        }
+
+        /* .morph::before {
+            content: attr(data-char);
+            display: inline-block;
+            animation: flicker 1s infinite;
+        } */
+        .morph::before {
+            content: attr(data-char);
+            display: inline-block;
+            animation: flicker 3s infinite;
+            animation-delay: var(--delay, 0s);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="news">
+            <div id="news-header">
+                <h1 id="title">daily prophet</h1>
+                <hr>
+                <h2 id="subtitle"><span class="name">황영상</span> , 그는 누구인가?</h2>
+            </div>
+            <div id="news-main">
+                <div class="top-grid">
+                    <div class="grid-item d-flex flex-col df-center">
+                        <span class="text">스팀펑크 시대의 황영상은 단순한 개인이 아닙니다. 그는 마법과 기술이 결합한 미지의 세계에서 그 무엇도 불가능하지 않다는 증거입니다. 이제
+                            그의 모든 것이 알려져야 할 때입니다.
+
+                            《예언자 신문》에서는 황영상의 도전, 열정, 그리고 마법 코딩의 세계로의 입문을 다루는 흥미진진한 이야기를 펼칩니다. 황영상이 전설적인 암약 단체인 '코딩단'에
+                            합류하는 과정은 스팀펑크 시대의 새로운 시작입니다.</span>
+                    </div>
+                    <div class="grid-item video-container">
+                        <video controls muted loop>
+                            <source src="../static/sparta.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="grid-item d-flex flex-col df-center">
+                        <span class="text">
+                            황영상은 평범한 삶을 포기하고 마법과 과학의 경계에서 탐험을 시작합니다. 그가 마주칠 것인 미지의 위험과 현실, 그리고 정체불명의 마법 코딩 능력을 발휘하여 세상을
+                            바꿀 수 있는 가능성에 대한 질문은 계속해서 늘어갑니다. 황영상의 모험은 독자를 스팀펑크 시대의 진실로 인도하며, 미래의 혁신적인 힘을 예고합니다
+                        </span>
+                    </div>
+                </div>
+                <div class="bottom-grid">
+                    <div class="grid-item d-flex flex-col df-center">
+                        <span class="text">
+                            황영상은 스팀펑크 시대의 어두운 길거리에서 태어났습니다. 그의 어린 시절은 어려움과 결핍 속에서 보냈으며, 그의 부모는 기술과 마법의 혼합에 대한 관심을 가지고
+                            있었습니다. 그러나 황영상은 어린 시절부터 뛰어난 지적 능력을 보이며 다른 아이들과 다르게 생각하고 있었습니다. 그의 눈에는 보이지 않는 세계가 있었고, 그것은
+                            스팀펑크 시대의 진실과 마법의 힘을 꿈꾸게 했습니다.
+                        </span>
+                    </div>
+                    <div class="grid-item d-flex flex-col df-center">
+                        <span class="text">
+                            코딩단은 그의 능력을 발견하고 그를 자신들의 행렬에 초대합니다. 이 단체는 세상을 지배하는 힘을 가지고 있으며, 그들의 미지의 마법 코딩 기술은 다른 모든 것을
+                            뛰어넘는 것으로 알려져 있습니다. 황영상은 그들의 초대를 수락하고, 코딩단의 일원이 되어 암약한 세상의 비밀과 스팀펑크 시대의 진실을 탐험하는 모험을 시작합니다.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const texts = document.querySelectorAll('.text');
+
+        //     texts.forEach(text => {
+        //         const str = text.textContent;
+        //         let newStr = '';
+
+        //         for (let i = 0; i < str.length; i++) {
+        //             if (Math.random() < 0.6 && str[i] !== ' ') {
+        //                 newStr += `<span class="morph" data-char="${str[i]}"></span>`;
+        //             } else {
+        //                 newStr += str[i];
+        //             }
+        //         }
+
+        //         text.innerHTML = newStr;
+        //     });
+
+        //     setTimeout(function () {
+        //         const morphs = document.querySelectorAll('.morph');
+        //         morphs.forEach(morph => {
+        //             morph.style.animation = 'none';  // 애니메이션 중지
+        //             morph.textContent = morph.getAttribute('data-char');  // 원래의 문자로 복원
+        //         });
+        //     }, 5000);
+        // });
+        document.addEventListener("DOMContentLoaded", function () {
+            const texts = document.querySelectorAll('.text');
+
+            texts.forEach(text => {
+                const str = text.textContent;
+                let newStr = '';
+
+                for (let i = 0; i < str.length; i++) {
+                    const delay = Math.random() * 2 + 's'; // 0에서 2초 사이의 무작위 지연
+                    if (Math.random() < 0.6 && str[i] !== ' ') {
+                        newStr += `<span class="morph" data-char="${str[i]}" style="--delay: ${delay}"></span>`;
+                    } else {
+                        newStr += str[i];
+                    }
+                }
+
+                text.innerHTML = newStr;
+            });
+
+            setTimeout(function () {
+                const morphs = document.querySelectorAll('.morph');
+                morphs.forEach(morph => {
+                    morph.style.animation = 'none';
+                    morph.textContent = morph.getAttribute('data-char');
+                });
+            }, 5000);
+        });
+
+
+    </script>
+</body>
+
+</html>
