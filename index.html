@@ -4,7 +4,6 @@
     <link
         href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
         rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="styles/newspaper.css">
     <title>코딩단 포스트</title>
     <meta name="viewport" content="width=device-width">
     <style>
@@ -317,19 +316,27 @@
             }
 
         }
+
         figure {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
+
         figure video {
             height: 20rem;
             filter: grayscale(100%);
             object-fit: cover;
         }
+
         .collumn {
             overflow: hidden;
+            width: 27%;
+        }
+        .collumns {
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
@@ -393,50 +400,96 @@
                 <div class="head"><span class="headline hl1">신비로운 인물 황영상, 코딩단의 미지의 힘이 등장
                     </span>
                     <p><span class="headline hl2">Let go your conscious self and act on instinct</span></p>
-                </div>뉴 에덴 시티, 2033년 9월 5일 - 스팀펑크 세계에서 코딩은 이제 마법과도 같은 힘으로 여겨지며, 코딩단은 이 기술을 통해 세계를 군림하고 있다. 그러나 이제 그들의 지배에 도전을 일으킬 미지의 인물, 황영상이 나타났다.</p>
+                </div>뉴 에덴 시티, 2033년 9월 5일 - 스팀펑크 세계에서 코딩은 이제 마법과도 같은 힘으로 여겨지며, 코딩단은 이 기술을 통해 세계를 군림하고 있다. 그러나 이제 그들의
+                지배에 도전을 일으킬 미지의 인물, 황영상이 나타났다.</p>
                 <figure class="figure">
-                    <video src="man.mp4" controls loop muted autoplay></video>
+                    <video src="../static/man.mp4" controls loop muted autoplay></video>
                     <figcaption class="figcaption">"This time, let go your conscious self and act on instinct."
                     </figcaption>
                 </figure>
                 <p>코딩단 내에서는 황영상의 등장으로 인해 긴장과 호기심이 고조되고 있으며, 그의 능력을 살펴보기 위한 연구가 진행 중이다. 코딩단의 대변인은 아래와 같이 밝혔다. <span
                         class="citation">"황영상은 우리의 디지털 신세계에 새로운 가능성을 제시하고 있습니다."</span>
-                        황영상의 등장으로 스팀펑크 세계는 더욱 복잡하고 혁명적인 시대로의 전환을 예고하고 있으며, 이제 그의 역할과 목적은 미래의 전설로 쓰여질 것으로 기대된다.</p>
+                    황영상의 등장으로 스팀펑크 세계는 더욱 복잡하고 혁명적인 시대로의 전환을 예고하고 있으며, 이제 그의 역할과 목적은 미래의 전설로 쓰여질 것으로 기대된다.</p>
             </div>
-            <div class="collumn">
-                <div class="head"><span class="headline hl3">The buzz of the little world </span>
-                    <p><span class="headline hl4">A thousand unknown plants</span></p>
-                </div>
-                <p>I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never
-                    was a greater artist than now. When, while the lovely valley teems with vapour around me, and the
-                    meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray
-                    gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling
-                    stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear
-                    the buzz of the little world among the stalks, and grow familiar with the countless indescribable
-                    forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own
-                    image, and the breath</p>
-            </div>
-            <div class="collumn">
-                <div class="head"><span class="headline hl1">It wasn't a dream </span>
-                    <p><span class="headline hl4">by FRANZ KAFKA</span></p>
-                </div>
-                <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed
-                    into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could
-                    see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was
-                    hardly able to cover it and seemed ready to slide off any moment. </p>
-
-                <p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he
-                    looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room
-                    although a little too small, lay peacefully between its four familiar walls. A collection of textile
-                    samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a
-                    picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.
-                    It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff
-                    that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the
-                    window at the dull weather. </p>
-            </div>
+            
         </div>
     </div>
+    <script>
+        // const randomTexts = ["0", "1", "코", "딩", "c", "o", "d", "i", "n", "g"];
 
+        // const changeRandomChar = (element) => {
+        //     // 현재 텍스트 가져오기
+        //     let currentText = element.innerText;
+
+        //     // 텍스트가 비어 있지 않은 경우에만 실행
+        //     if (currentText.length > 0) {
+        //         // 랜덤한 인덱스 및 글자 선택
+        //         let randomIndex = Math.floor(Math.random() * 1) + 1;
+
+        //         // 랜덤 텍스트 선택
+        //         let replacement = randomTexts[Math.floor(Math.random() * randomTexts.length)];
+
+        //         // 텍스트 변경
+        //         let newText = currentText.substring(0, randomIndex) + replacement + currentText.substring(randomIndex + 1);
+        //         element.innerText = newText;
+        //         console.log(newText)
+        //     }
+        // }
+
+        // const dynamicTextElements = document.querySelectorAll('span, p');
+
+        // // 최대 20개의 요소만 선택
+        // const maxElements = 20;
+        // const elementsToChange = Array.from(dynamicTextElements).slice(0, maxElements);
+
+        // elementsToChange.forEach(el => {
+        //     setInterval(() => changeRandomChar(el), 300);
+        // });
+
+        const randomTexts = ["0", "1", "코", "딩", "단"];
+
+const changeRandomChar = (element) => {
+    let currentText = element.innerText;
+
+    if (currentText.length > 0) {
+        element.dataset.originalText = currentText; // 원래 텍스트를 데이터 속성에 저장
+        
+        return setInterval(() => {
+            let changedText = currentText;
+            let randomIndices = [];
+            
+            for (let i = 0; i < 4; i++) {
+                let randomIndex;
+                // 중복되는 인덱스가 생성되지 않도록 함
+                do {
+                    randomIndex = Math.floor(Math.random() * currentText.length);
+                } while (randomIndices.includes(randomIndex));
+                randomIndices.push(randomIndex);
+
+                let replacement = randomTexts[Math.floor(Math.random() * randomTexts.length)];
+                changedText = changedText.substring(0, randomIndex) + replacement + changedText.substring(randomIndex + 1);
+            }
+
+            element.innerText = changedText;
+        }, 150);
+    }
+}
+
+const dynamicTextElements = document.querySelectorAll('span, p');
+
+dynamicTextElements.forEach(el => {
+    const interval = changeRandomChar(el);
+
+    // 5초 후에 애니메이션 멈추고 원래 텍스트로 복원
+    setTimeout(() => {
+        clearInterval(interval);
+        el.innerText = el.dataset.originalText;
+    }, 1500);
+});
+
+
+
+    </script>
 </body>
 
 </html>
